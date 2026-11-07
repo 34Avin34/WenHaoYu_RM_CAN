@@ -1,0 +1,10 @@
+---
+# 本工程是"用 C++ 编译器写 C 风格的嵌入式驱动"：
+# C 风格强制转换、位运算、寄存器操作都是刻意的写法，不是疏忽。
+# 因此关掉面向大型 C++ 工程的风格检查（cppcoreguidelines-*、readability-* 等），
+# 只保留能发现真实 bug 的类别。
+#
+# 说明：Checks 是从零开始构造的，" -*" 先把全部检查关掉，
+# 再打开 clang-analyzer-*（静态分析，查空指针/越界等）和
+# bugprone-*（易错写法，含窄化转换、隐式回退等）。
+Checks: '-*,clang-analyzer-*,bugprone-*'
